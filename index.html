@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AGIT-BENIN Sarl | Import-Export & Transit</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        header {
+            background: #0b3d2e;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .hero {
+            min-height: 80vh;
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.55),
+                rgba(0, 0, 0, 0.55)
+            ),
+            url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 25px;
+            background: #f4b400;
+            color: #111;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .title h2 {
+            font-size: 32px;
+            color: #0b3d2e;
+        }
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0b3d2e;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        .contact {
+            background: #0b3d2e;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            margin: 10px 0;
+            font-size: 17px;
+        }
+
+        footer {
+            background: #06271e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">AGIT-BENIN Sarl</div>
+
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="accueil">
+        <div>
+            <h1>AGIT-BENIN Sarl</h1>
+
+            <p>
+                Votre partenaire dans l'import-export, le transit,
+                la représentation, le transport et le commerce.
+            </p>
+
+            <a href="#contact" class="btn">
+                Nous contacter
+            </a>
+        </div>
+    </section>
+
+    <section id="apropos">
+        <div class="title">
+            <h2>À propos de nous</h2>
+        </div>
+
+        <div class="about">
+            <p>
+                AGIT-BENIN Sarl est une entreprise basée à Cotonou,
+                spécialisée dans l'import-export, le transit,
+                la représentation, le transport et le commerce.
+            </p>
+
+            <p>
+                Notre objectif est d'accompagner nos clients
+                dans leurs différentes opérations commerciales
+                et logistiques avec professionnalisme et efficacité.
+            </p>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="title">
+            <h2>Nos services</h2>
+        </div>
+
+        <div class="services">
+
+            <div class="card">
+                <h3>Import-Export</h3>
+                <p>
+                    Solutions pour vos opérations d'importation
+                    et d'exportation.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Transit</h3>
+                <p>
+                    Accompagnement dans vos opérations de transit
+                    et de dédouanement.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Représentation</h3>
+                <p>
+                    Représentation commerciale et accompagnement
+                    de vos activités.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Transport</h3>
+                <p>
+                    Solutions de transport adaptées
+                    à vos besoins.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Commerce</h3>
+                <p>
+                    Activités commerciales et solutions adaptées
+                    aux besoins de nos partenaires.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+
+        <h2>Contactez-nous</h2>
+
+        <p>📍 Cotonou, Bénin</p>
+
+        <p>📞 +229 01 64 25 00 30</p>
+
+        <a
+            class="btn"
+            href="tel:+2290164250030"
+        >
+            Appeler maintenant
+        </a>
+
+    </section>
+
+    <footer>
+        © 2026 AGIT-BENIN Sarl. Tous droits réservés.
+    </footer>
+
+</body>
+</html>
