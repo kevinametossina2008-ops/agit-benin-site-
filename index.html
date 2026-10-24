@@ -1,293 +1,667 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AGIT-BENIN Sarl | Import-Export & Transit</title>
+<title>AGIT-BENIN Sarl | Import-Export, Transit & Transport</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        body {
-            background: #f5f7fa;
-            color: #222;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        header {
-            background: #0b3d2e;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body {
+    background: #f7f8f6;
+    color: #17231e;
+}
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-        }
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 7%;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-        .hero {
-            min-height: 80vh;
-            background: linear-gradient(
-                rgba(0, 0, 0, 0.55),
-                rgba(0, 0, 0, 0.55)
-            ),
-            url("https://images.unsplash.com/photo-1494412651409-8963ce7935a7?auto=format&fit=crop&w=1600&q=80");
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #075c3c;
+    color: #e6b51e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
 
-            background-size: cover;
-            background-position: center;
+.logo-text {
+    color: #075c3c;
+    font-size: 20px;
+    font-weight: 800;
+}
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 30px;
-        }
+.logo-text span {
+    color: #e6b51e;
+}
 
-        .hero h1 {
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
+.logo-small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #56635d;
+    margin-top: 3px;
+}
 
-        .hero p {
-            font-size: 19px;
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.6;
-        }
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 14px 25px;
-            background: #f4b400;
-            color: #111;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+nav a {
+    text-decoration: none;
+    color: #17231e;
+    font-weight: 600;
+    font-size: 14px;
+}
 
-        section {
-            padding: 70px 8%;
-        }
+nav a:hover {
+    color: #075c3c;
+}
 
-        .title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+.whatsapp-btn {
+    background: #075c3c;
+    color: white !important;
+    padding: 12px 18px;
+    border-radius: 30px;
+}
 
-        .title h2 {
-            font-size: 32px;
-            color: #0b3d2e;
-        }
+/* HERO */
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 
-        .about {
-            max-width: 900px;
-            margin: auto;
-            text-align: center;
-            line-height: 1.8;
-            font-size: 17px;
-        }
+    background:
+    linear-gradient(90deg,
+    rgba(0,55,36,0.98) 0%,
+    rgba(0,75,48,0.93) 40%,
+    rgba(0,75,48,0.35) 72%,
+    rgba(0,0,0,0.25) 100%),
+    url("https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c1?auto=format&fit=crop&w=1800&q=85");
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
+    background-size: cover;
+    background-position: center;
+}
 
-        .card {
-            background: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-        }
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    color: white;
+}
 
-        .card h3 {
-            color: #0b3d2e;
-            margin-bottom: 12px;
-        }
+.hero-line {
+    width: 45px;
+    height: 4px;
+    background: #e6b51e;
+    margin-bottom: 20px;
+}
 
-        .card p {
-            line-height: 1.6;
-        }
+.hero h1 {
+    font-size: clamp(40px, 6vw, 70px);
+    line-height: 1;
+    margin-bottom: 18px;
+}
 
-        .contact {
-            background: #0b3d2e;
-            color: white;
-            text-align: center;
-        }
+.hero h1 span {
+    color: #e6b51e;
+}
 
-        .contact h2 {
-            margin-bottom: 20px;
-        }
+.hero h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
 
-        .contact p {
-            margin: 10px 0;
-            font-size: 17px;
-        }
+.hero p {
+    max-width: 650px;
+    line-height: 1.7;
+    font-size: 17px;
+    color: #f2f5f3;
+}
 
-        footer {
-            background: #06271e;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+.buttons {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-        @media (max-width: 700px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-            }
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-            nav a {
-                margin: 0 7px;
-                font-size: 14px;
-            }
+.btn-gold {
+    background: #e6b51e;
+    color: #10261d;
+}
 
-            .hero h1 {
-                font-size: 32px;
-            }
+.btn-gold:hover {
+    transform: translateY(-3px);
+}
 
-            .hero p {
-                font-size: 16px;
-            }
-        }
-    </style>
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #075c3c;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    color: #075c3c;
+    font-size: 36px;
+}
+
+.section-title p {
+    margin-top: 10px;
+    color: #66736d;
+}
+
+/* ABOUT */
+.about {
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    line-height: 1.9;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+/* SERVICES */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    border-top: 4px solid #075c3c;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #075c3c;
+    color: #e6b51e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.card h3 {
+    color: #075c3c;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #65716b;
+    line-height: 1.6;
+}
+
+/* WHY US */
+.why {
+    background: #064a32;
+    color: white;
+}
+
+.why-content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.why h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.advantage {
+    border-left: 2px solid #e6b51e;
+    padding-left: 20px;
+}
+
+.advantage h3 {
+    color: #e6b51e;
+    margin-bottom: 8px;
+}
+
+.advantage p {
+    line-height: 1.5;
+    color: #e5eee9;
+}
+
+/* CONTACT */
+.contact {
+    background: white;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 800px;
+    margin: auto;
+}
+
+.contact h2 {
+    color: #075c3c;
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin: 12px;
+    font-size: 18px;
+}
+
+.contact-buttons {
+    margin-top: 30px;
+}
+
+/* FOOTER */
+footer {
+    background: #032c1e;
+    color: white;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer strong {
+    color: #e6b51e;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #cbd8d2;
+}
+
+/* MOBILE */
+@media(max-width: 800px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .whatsapp-btn {
+        padding: 9px 13px;
+    }
+
+    .hero {
+        min-height: 600px;
+        background-position: 65% center;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero h2 {
+        font-size: 21px;
+    }
+
+    section {
+        padding: 60px 6%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <div class="logo">AGIT-BENIN Sarl</div>
+<header>
 
-        <nav>
-            <a href="#accueil">Accueil</a>
-            <a href="#apropos">À propos</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="logo">
+        <div class="logo-icon">A</div>
 
-    <section class="hero" id="accueil">
         <div>
-            <h1>AGIT-BENIN Sarl</h1>
+            <div class="logo-text">
+                AGIT-<span>BENIN</span> Sarl
+            </div>
 
-            <p>
-                Votre partenaire dans l'import-export, le transit,
-                la représentation, le transport et le commerce.
-            </p>
+            <small class="logo-small">
+                IMPORT - EXPORT - TRANSIT - TRANSPORT
+            </small>
+        </div>
+    </div>
 
-            <a href="#contact" class="btn">
-                Nous contacter
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#apropos">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#pourquoi">Pourquoi nous</a>
+        <a href="#contact">Contact</a>
+
+        <a class="whatsapp-btn"
+           href="https://wa.me/2290164250030">
+           WhatsApp
+        </a>
+    </nav>
+
+</header>
+
+
+<!-- ACCUEIL -->
+
+<section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+        <div class="hero-line"></div>
+
+        <h1>
+            AGIT-BENIN <span>Sarl</span>
+        </h1>
+
+        <h2>
+            Import – Export – Transit – Transport
+        </h2>
+
+        <p>
+            Votre partenaire de confiance pour vos opérations
+            commerciales et logistiques au Bénin et à
+            l'international.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#services" class="btn btn-gold">
+                Découvrir nos services
             </a>
-        </div>
-    </section>
 
-    <section id="apropos">
-        <div class="title">
-            <h2>À propos de nous</h2>
+            <a href="https://wa.me/2290164250030"
+               class="btn btn-outline">
+                Nous contacter sur WhatsApp
+            </a>
+
         </div>
 
-        <div class="about">
+    </div>
+
+</section>
+
+
+<!-- À PROPOS -->
+
+<section id="apropos">
+
+    <div class="section-title">
+        <h2>À propos de nous</h2>
+        <p>Une entreprise au service de vos ambitions</p>
+    </div>
+
+    <div class="about">
+
+        <p>
+            <strong>AGIT-BENIN Sarl</strong> est une entreprise
+            basée à Cotonou, au Bénin, spécialisée dans
+            l'import-export, le transit, la représentation,
+            le transport et le commerce.
+        </p>
+
+        <p>
+            Nous accompagnons nos clients et partenaires
+            dans leurs opérations commerciales et logistiques
+            avec une approche professionnelle et adaptée
+            à leurs besoins.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="section-title">
+
+        <h2>Nos services</h2>
+
+        <p>
+            Des solutions adaptées à vos besoins
+        </p>
+
+    </div>
+
+    <div class="services">
+
+        <div class="card">
+            <div class="icon">🚢</div>
+            <h3>Import-Export</h3>
             <p>
-                AGIT-BENIN Sarl est une entreprise basée à Cotonou,
-                spécialisée dans l'import-export, le transit,
-                la représentation, le transport et le commerce.
+                Accompagnement de vos opérations
+                d'importation et d'exportation.
             </p>
+        </div>
 
+        <div class="card">
+            <div class="icon">📦</div>
+            <h3>Transit</h3>
             <p>
-                Notre objectif est d'accompagner nos clients
-                dans leurs différentes opérations commerciales
-                et logistiques avec professionnalisme et efficacité.
+                Gestion et accompagnement de vos
+                opérations de transit.
             </p>
         </div>
-    </section>
 
-    <section id="services">
-        <div class="title">
-            <h2>Nos services</h2>
+        <div class="card">
+            <div class="icon">🤝</div>
+            <h3>Représentation</h3>
+            <p>
+                Représentation commerciale et
+                accompagnement de vos activités.
+            </p>
         </div>
 
-        <div class="services">
+        <div class="card">
+            <div class="icon">🚛</div>
+            <h3>Transport</h3>
+            <p>
+                Solutions de transport adaptées
+                à vos marchandises et besoins.
+            </p>
+        </div>
 
-            <div class="card">
-                <h3>Import-Export</h3>
+        <div class="card">
+            <div class="icon">🌍</div>
+            <h3>Commerce</h3>
+            <p>
+                Développement d'activités commerciales
+                et accompagnement de partenaires.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- POURQUOI NOUS -->
+
+<section class="why" id="pourquoi">
+
+    <div class="why-content">
+
+        <h2>
+            Pourquoi choisir
+            <span style="color:#e6b51e;">
+                AGIT-BENIN Sarl
+            </span> ?
+        </h2>
+
+        <div class="advantages">
+
+            <div class="advantage">
+                <h3>Fiabilité</h3>
                 <p>
-                    Solutions pour vos opérations d'importation
-                    et d'exportation.
+                    Un accompagnement sérieux pour
+                    vos opérations.
                 </p>
             </div>
 
-            <div class="card">
-                <h3>Transit</h3>
+            <div class="advantage">
+                <h3>Réactivité</h3>
                 <p>
-                    Accompagnement dans vos opérations de transit
-                    et de dédouanement.
+                    Une attention portée à vos besoins
+                    et à vos délais.
                 </p>
             </div>
 
-            <div class="card">
-                <h3>Représentation</h3>
+            <div class="advantage">
+                <h3>Expertise</h3>
                 <p>
-                    Représentation commerciale et accompagnement
-                    de vos activités.
+                    Des services adaptés au commerce
+                    et à la logistique.
                 </p>
             </div>
 
-            <div class="card">
-                <h3>Transport</h3>
+            <div class="advantage">
+                <h3>Partenariat</h3>
                 <p>
-                    Solutions de transport adaptées
-                    à vos besoins.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Commerce</h3>
-                <p>
-                    Activités commerciales et solutions adaptées
-                    aux besoins de nos partenaires.
+                    Une relation durable avec nos
+                    clients et partenaires.
                 </p>
             </div>
 
         </div>
-    </section>
 
-    <section class="contact" id="contact">
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-box">
 
         <h2>Contactez-nous</h2>
 
-        <p>📍 Cotonou, Bénin</p>
+        <p>📍 <strong>Cotonou, Bénin</strong></p>
 
-        <p>📞 +229 01 64 25 00 30</p>
+        <p>📞 <strong>+229 01 64 25 00 30</strong></p>
 
-        <a
-            class="btn"
-            href="tel:+2290164250030"
-        >
-            Appeler maintenant
-        </a>
+        <div class="contact-buttons">
 
-    </section>
+            <a
+                href="tel:+2290164250030"
+                class="btn btn-gold">
+                📞 Appeler maintenant
+            </a>
 
-    <footer>
+            <a
+                href="https://wa.me/2290164250030"
+                class="btn"
+                style="background:#075c3c;color:white;">
+                💬 Écrire sur WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>
+        AGIT-<strong>BENIN</strong> Sarl
+    </h3>
+
+    <p>
+        Import - Export - Transit - Transport
+    </p>
+
+    <p>
         © 2026 AGIT-BENIN Sarl. Tous droits réservés.
-    </footer>
+    </p>
+
+</footer>
 
 </body>
 </html>
